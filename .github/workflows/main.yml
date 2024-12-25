@@ -1,4 +1,4 @@
-name: React CI/CD Pipeline
+name: React CI Pipeline
 
 on: 
   workflow_dispatch:
@@ -21,3 +21,9 @@ jobs:
 
       - name: Build Application
         run: npm run build
+
+      - name: Uploading Artifact...
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: dist
